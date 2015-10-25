@@ -4,6 +4,7 @@ package View
 	import starling.events.Event;
 
 	public class ViewFacade extends Sprite{
+		private static var instance:ViewFacade;
 		private var screenManager:ScreenManager;
 		
 		public function ViewFacade(){
@@ -18,6 +19,16 @@ package View
 			addChild(screenManager);
 			
 			screenManager.loadScreen(Game);
+		}
+		
+		/**
+		 * Singleton instance.
+		 */
+		public static function getInstance():ViewFacade{
+			if(instance == null){
+				instance = new ViewFacade();
+			}
+			return instance;
 		}
 	}
 }
