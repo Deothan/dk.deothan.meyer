@@ -1,31 +1,9 @@
 package View
 {
-	import flash.filesystem.File;
-	
-	import starling.display.Image;
-	import starling.display.Sprite;
-	import starling.utils.AssetManager;
-	
-	public class ScreenManager extends Sprite{
-		private var assetManager:AssetManager;
-
-		public function ScreenManager(){
-			assetManager = new AssetManager();
-			var folder:File = File.applicationDirectory.resolvePath("Assets");
-			assetManager.enqueue(folder);
-			assetManager.loadQueue(progress);
-		}
-
-		private function progress( ratio:Number ):void{
-			if( ratio == 1 ){
-				start();
-			}
-		}
-
-		private function start():void
+	public class ScreenManager
+	{
+		public function ScreenManager()
 		{
-			var image:Image = new Image( assetManager.getTexture("1") );
-			addChild( image );
 		}
 	}
 }
