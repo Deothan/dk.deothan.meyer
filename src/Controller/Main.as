@@ -9,10 +9,8 @@ package Controller
 	import starling.core.Starling;
 	
 	[SWF(width="1280", height="800", backgroundColor="#00CC00")]
-	public class Main extends Sprite
-	{
-		public function Main()
-		{
+	public class Main extends Sprite{
+		public function Main(){
 			super();
 			
 			stage.align = StageAlign.TOP_LEFT;
