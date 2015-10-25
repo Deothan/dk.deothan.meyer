@@ -4,19 +4,19 @@ package Controller
 	import Entities.Die;
 
 	public class Factory{
-		public function createMeyerCup():Cup{
+		public function CreateMeyerCup():Cup{
 			return new Cup(2);
 		}
 		
-		public function createCup():Cup{
+		public function CreateCup():Cup{
 			return new Cup(0);
 		}
 		
-		public function createCustomDie(numberOfSides:int):Die{
+		public function CreateCustomDie(numberOfSides:int):Die{
 			return new Die(numberOfSides);
 		}
 		
-		public function createDie():Die{
+		public function CreateDie():Die{
 			return new Die();
 		}
 	}

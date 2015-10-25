@@ -22,16 +22,14 @@ package Entities
 		}
 		
 		/**
-		 * @return returns an array of Die object, if there are no dice in the cup it will return null.
+		 * Rolls the dice in the cup if there are any.
 		 */
-		public function Roll():Array{
+		public function Roll():void{
 			if(!isEmpty){
 				for each(var d:Die in dice){
 				d.Roll();
 				}
-				return dice;
 			}
-			return null;
 		}
 	}
 }

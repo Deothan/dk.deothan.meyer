@@ -13,5 +13,9 @@ package View
 			screen = new newScreen();
 			addChild(screen);
 		}
+		
+		public function GetScreen():Sprite{
+			return screen;
+		}
 	}
 }

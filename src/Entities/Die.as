@@ -21,7 +21,7 @@ package Entities
 			return value = Math.ceil(Math.random()*numberOfSides);
 		}
 
-		public function getValue():int{
+		public function GetValue():int{
 			return value;
 		}
 	}

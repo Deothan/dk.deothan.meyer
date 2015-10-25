@@ -2,6 +2,7 @@ package View
 {
 	import starling.display.Sprite;
 	import starling.events.Event;
+	import Entities.Cup;
 
 	public class ViewFacade extends Sprite{
 		private static var instance:ViewFacade;
@@ -29,6 +30,10 @@ package View
 				instance = new ViewFacade();
 			}
 			return instance;
+		}
+		
+		public function UpdateCup(c:Cup):void{		
+			
 		}
 	}
 }

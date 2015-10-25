@@ -13,19 +13,19 @@ package View
 			assetManager = new AssetManager();
 			var folder:File = File.applicationDirectory.resolvePath("Assets");
 			assetManager.enqueue(folder);
-			assetManager.loadQueue(progress);
+			assetManager.loadQueue(Progress);
 		}
 
-		private function progress( ratio:Number ):void{
-			if( ratio == 1 ){
-				start();
+		private function Progress(ratio:Number):void{
+			if(ratio == 1){
+				Start();
 			}
 		}
 
-		private function start():void
+		private function Start():void
 		{
-			var image:Image = new Image( assetManager.getTexture("1") );
-			addChild( image );
+			var image:Image = new Image(assetManager.getTexture("1"));
+			addChild(image);
 		}
 	}
 }

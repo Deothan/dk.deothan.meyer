@@ -8,7 +8,7 @@ package Controller
 	
 	import starling.core.Starling;
 	
-	[SWF(width="1280", height="800", backgroundColor="#00CC00")]
+	[SWF(width="1024", height="768", backgroundColor="#00CC00")]
 	public class Main extends Sprite{
 		public function Main(){
 			super();
