@@ -4,25 +4,34 @@ package Entities
 
 	public class Cup extends Sprite{
 		private var dice:Array;
+		private var isEmpty:Boolean = false;
 		
 		/**
 		 * @param numberOfDice - The number of dice in the cup.
 		 * @param numberOfSides - The number of sides on each dice.
 		 */
 		public function Cup(numberOfDice:int, numberOfSides:int=6){
-			dice = new Array(numberOfDice);
+			if(numberOfDice != 0)
+				dice = new Array(numberOfDice);
+			else
+				isEmpty = true;
 			
 			for(var i:int=0; i<numberOfDice; i++){
-				dice[i]= new Die().setNumberOfSides(numberOfSides);
+				dice[i]= new Die(numberOfSides)
 			}
 		}
 		
+		/**
+		 * @return returns an array of Die object, if there are no dice in the cup it will return null.
+		 */
 		public function Roll():Array{
-			for each(var d:Die in dice){
+			if(!isEmpty){
+				for each(var d:Die in dice){
 				d.Roll();
+				}
+				return dice;
 			}
-			
-			return dice;
+			return null;
 		}
 	}
 }
