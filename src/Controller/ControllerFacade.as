@@ -25,7 +25,7 @@ package Controller
 		}
 		
 		public function Roll():void{
-			if(!ModelFacade.GetInstance().IsCupLifted())
+			if(ModelFacade.GetInstance().IsCupLifted())
 				ModelFacade.GetInstance().RollMeyerCup();
 		}
 		
