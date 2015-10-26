@@ -2,12 +2,19 @@ package View
 {
 	import flash.filesystem.File;
 	
+	import Controller.ControllerFacade;
+	
+	import starling.display.Button;
 	import starling.display.Image;
 	import starling.display.Sprite;
+	import starling.events.Event;
 	import starling.utils.AssetManager;
 	
 	public class Game extends Sprite{
 		private var assetManager:AssetManager;
+		private var image:Image;
+		private var image2:Image;
+		private var rollButton:Button;
 
 		public function Game(){
 			assetManager = new AssetManager();
@@ -24,8 +31,22 @@ package View
 
 		private function Start():void
 		{
-			var image:Image = new Image(assetManager.getTexture("1"));
-			addChild(image);
+			rollButton = new Button(assetManager.getTexture("1"));
+			rollButton.addEventListener(Event.TRIGGERED, rollButtonTriggered);
+			addChild(rollButton);
+			
+		}
+		
+		public function setNewImage(nr:int):void{
+			trace(nr);
+			removeChild(rollButton);
+			rollButton = new Button(assetManager.getTexture(nr.toString()));
+			rollButton.addEventListener(Event.TRIGGERED, rollButtonTriggered);
+			addChild(rollButton);
+		}
+		
+		private function rollButtonTriggered():void{
+			ControllerFacade.getInstance().Roll();
 		}
 	}
 }

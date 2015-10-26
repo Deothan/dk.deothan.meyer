@@ -31,5 +31,9 @@ package Entities
 				}
 			}
 		}
+		
+		public function GetDice():Array{
+			return dice;
+		}
 	}
 }
