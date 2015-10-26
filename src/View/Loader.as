@@ -7,8 +7,7 @@ package View
 		/**
 		 * Used to load the singleton instance of the ViewFacade.
 		 */
-		public function Loader()
-		{
+		public function Loader(){
 			addChild(ViewFacade.getInstance());
 		}
 	}

@@ -8,13 +8,13 @@ package Controller
 	
 	import starling.core.Starling;
 	
-	[SWF(width="1920", height="1080")]
+	[SWF(width="1080", height="1920")]
 	public class Main extends Sprite{
 		public function Main(){
 			super();
 			
 			stage.align = StageAlign.TOP_LEFT;
-			stage.scaleMode = StageScaleMode.EXACT_FIT;
+			stage.scaleMode = StageScaleMode.SHOW_ALL;
 			
 			var starlingInstance:Starling = new Starling(Loader, stage);
 			starlingInstance.start();
