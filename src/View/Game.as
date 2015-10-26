@@ -36,8 +36,7 @@ package View
 			}
 		}
 
-		private function Start():void
-		{
+		private function Start():void{		
 			table = new Image(assetManager.getTexture("table"));
 			addChild(table);
 			
@@ -67,17 +66,16 @@ package View
 			rollButton = new Button(assetManager.getTexture("button"), "Roll");
 			rollButton.fontSize = 70;
 			rollButton.addEventListener(Event.TRIGGERED, RollButtonTriggered);
-			rollButton.x = stage.stageWidth/2 - rollButton.width/2 - 300;
+			rollButton.x = stage.stageWidth/2 - rollButton.width/2 - 200;
 			rollButton.y = stage.stageHeight/2 + 600;
 			addChild(rollButton);
 			
 			hideButton = new Button(assetManager.getTexture("button"), "Hide");
-			hideButton.fontSize = 70;
+			hideButton.fontSize = 70; 
 			hideButton.addEventListener(Event.TRIGGERED, HideButtonTriggered);
-			hideButton.x = stage.stageWidth/2 - hideButton.width/2 + 300;
+			hideButton.x = stage.stageWidth/2 - hideButton.width/2 + 200;
 			hideButton.y = stage.stageHeight/2 + 600;
 			addChild(hideButton);
-			
 		}
 		
 		public function UpdateDice(c:Cup):void{
