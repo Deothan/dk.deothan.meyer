@@ -47,13 +47,15 @@ package View
 			addChild(cupBottom);
 			
 			die1 = new Image(assetManager.getTexture("1"));
-			die1.x = stage.stageWidth/2 - die1.width - 5;
-			die1.y = stage.stageHeight/2 - die1.height/2+10;
+			die1.x = stage.stageWidth/2 - die1.width + 90;
+			die1.y = stage.stageHeight/2 - die1.height/2 + 20;
+			die1.rotation = 45;
 			addChild(die1);
 			
 			die2 = new Image(assetManager.getTexture("2"));
-			die2.x = stage.stageWidth/2 + 5;
-			die2.y = stage.stageHeight/2 - die2.height/2+10;
+			die2.x = stage.stageWidth/2 + 100;
+			die2.y = stage.stageHeight/2 - die2.height/2 + 150;
+			die2.rotation = 10;
 			addChild(die2);
 			
 			cupTop = new Image(assetManager.getTexture("cup"));
@@ -63,13 +65,13 @@ package View
 			addChild(cupTop);
 			
 			rollButton = new Button(assetManager.getTexture("button"), "Roll");
-			rollButton.addEventListener(Event.TRIGGERED, rollButtonTriggered);
+			rollButton.addEventListener(Event.TRIGGERED, RollButtonTriggered);
 			rollButton.x = stage.stageWidth/2 - rollButton.width/2 - 100;
 			rollButton.y = stage.stageHeight/2 + 300;
 			addChild(rollButton);
 			
 			hideButton = new Button(assetManager.getTexture("button"), "Hide");
-			hideButton.addEventListener(Event.TRIGGERED, hideButtonTriggered);
+			hideButton.addEventListener(Event.TRIGGERED, HideButtonTriggered);
 			hideButton.x = stage.stageWidth/2 - hideButton.width/2 + 100;
 			hideButton.y = stage.stageHeight/2 + 300;
 			addChild(hideButton);
@@ -88,11 +90,11 @@ package View
 				cupTop.alpha = 0;
 		}
 		
-		private function rollButtonTriggered():void{
+		private function RollButtonTriggered():void{
 			ControllerFacade.getInstance().Roll();
 		}
 		
-		private function hideButtonTriggered():void{
+		private function HideButtonTriggered():void{
 			ControllerFacade.getInstance().ChangeCupState();
 		}
 	}
