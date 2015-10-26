@@ -29,8 +29,13 @@ package View
 		}
 		
 		public function UpdateCup(c:Cup):void{	
-			(screen as Game).setNewImage((c.GetDice()[0] as Die).GetValue());	
+			(screen as Game).UpdateDice(c);	
 		}
+		
+		public function CupStateChanged(isLifted:Boolean):void{
+			(screen as Game).UpdateTopCup(isLifted);
+		}
+		
 		
 		/**
 		 * @param newScreen:Class - Changes the current screen.
