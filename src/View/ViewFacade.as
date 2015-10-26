@@ -1,7 +1,6 @@
 package View
 {
 	import Entities.Cup;
-	import Entities.Die;
 	
 	import starling.display.Sprite;
 	import starling.events.Event;
@@ -18,7 +17,7 @@ package View
 		 * Initializes the View, and sets the startup screen.
 		 */
 		private function initialize(event:Event):void{
-			loadScreen(Game);
+			LoadScreen(Game);
 		}
 		
 		/**
@@ -40,7 +39,7 @@ package View
 		/**
 		 * @param newScreen:Class - Changes the current screen.
 		 */
-		public function loadScreen( newScreen:Class ):void{
+		public function LoadScreen(newScreen:Class):void{
 			if(screen != null && contains(screen)){
 				removeChild(screen, true);
 			}
