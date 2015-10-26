@@ -6,7 +6,7 @@ package Model
 
 	public class ModelFacade{
 		private static var instance:ModelFacade;
-		private var isLifted:Boolean;
+		private var isLifted:Boolean = false;
 		private var meyerCup:Cup;
 
 		/**

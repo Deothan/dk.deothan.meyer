@@ -4,11 +4,11 @@ package Controller
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
 	
-	import View.ViewFacade;
+	import View.Loader;
 	
 	import starling.core.Starling;
 	
-	[SWF(width="1024", height="768", backgroundColor="#00CC00")]
+	[SWF(width="1280", height="800", backgroundColor="#00CC00")]
 	public class Main extends Sprite{
 		public function Main(){
 			super();
@@ -16,7 +16,7 @@ package Controller
 			stage.align = StageAlign.TOP_LEFT;
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			
-			var starlingInstance:Starling = new Starling(ViewFacade, stage);
+			var starlingInstance:Starling = new Starling(Loader, stage);
 			starlingInstance.start();
 		}
 	}

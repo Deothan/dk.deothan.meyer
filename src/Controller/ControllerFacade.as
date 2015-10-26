@@ -6,6 +6,9 @@ package Controller
 		private static var instance:ControllerFacade;
 		private var factory:Factory = new Factory();
 		
+		public function ControllerFacade(){
+			StartNewGame();
+		}	
 
 		/**
 		 * Singleton instance.
@@ -22,7 +25,7 @@ package Controller
 		}
 		
 		public function Roll():void{
-			if(ModelFacade.GetInstance().IsCupLifted())
+			if(!ModelFacade.GetInstance().IsCupLifted())
 				ModelFacade.GetInstance().RollMeyerCup();
 		}
 		

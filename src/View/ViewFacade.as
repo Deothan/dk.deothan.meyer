@@ -1,12 +1,14 @@
 package View
 {
+	import Entities.Cup;
+	import Entities.Die;
+	
 	import starling.display.Sprite;
 	import starling.events.Event;
-	import Entities.Cup;
 
 	public class ViewFacade extends Sprite{
-		private static var instance:ViewFacade;
-		private var screenManager:ScreenManager;
+		private static var instance:ViewFacade = new ViewFacade();
+		private var screen:Sprite;
 		
 		public function ViewFacade(){
 			addEventListener(Event.ADDED_TO_STAGE, initialize);
@@ -16,24 +18,30 @@ package View
 		 * Initializes the View, and sets the startup screen.
 		 */
 		private function initialize(event:Event):void{
-			screenManager = new ScreenManager();
-			addChild(screenManager);
-			
-			screenManager.loadScreen(Game);
+			loadScreen(Game);
 		}
 		
 		/**
 		 * Singleton instance.
 		 */
 		public static function getInstance():ViewFacade{
-			if(instance == null){
-				instance = new ViewFacade();
-			}
 			return instance;
 		}
 		
-		public function UpdateCup(c:Cup):void{		
+		public function UpdateCup(c:Cup):void{	
+			(screen as Game).setNewImage((c.GetDice()[0] as Die).GetValue());	
+		}
+		
+		/**
+		 * @param newScreen:Class - Changes the current screen.
+		 */
+		public function loadScreen( newScreen:Class ):void{
+			if(screen != null && contains(screen)){
+				removeChild(screen, true);
+			}
 			
+			screen = new newScreen();
+			addChild(screen);
 		}
 	}
 }
