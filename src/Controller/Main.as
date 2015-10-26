@@ -14,7 +14,7 @@ package Controller
 			super();
 			
 			stage.align = StageAlign.TOP_LEFT;
-			stage.scaleMode = StageScaleMode.SHOW_ALL;
+			stage.scaleMode = StageScaleMode.EXACT_FIT;
 			
 			var starlingInstance:Starling = new Starling(Loader, stage);
 			starlingInstance.start();
