@@ -35,8 +35,7 @@ package Model
 		}
 		
 		public function ChangeCupState(state:Boolean):void{
-			isLifted = state;
-			ViewFacade.getInstance().CupStateChanged(isLifted);
+			ViewFacade.getInstance().CupStateChanged(isLifted = state);
 		}
 		
 		public function RollMeyerCup():void{

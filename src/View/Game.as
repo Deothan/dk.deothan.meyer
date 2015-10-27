@@ -15,8 +15,7 @@ package View
 	
 	public class Game extends Sprite{
 		private var assetManager:AssetManager;
-		private var cupBottom:Image;
-		private var cupTop:Image;
+		private var cup:Image;
 		private var table:Image;
 		private var die1:Image;
 		private var die2:Image;
@@ -40,10 +39,10 @@ package View
 			table = new Image(assetManager.getTexture("table"));
 			addChild(table);
 			
-			cupBottom = new Image(assetManager.getTexture("cup"));
-			cupBottom.x = stage.stageWidth/2-cupBottom.width/2;
-			cupBottom.y = stage.stageHeight/2-cupBottom.height/2;
-			addChild(cupBottom);
+			cup = new Image(assetManager.getTexture("cup"));
+			cup.x = stage.stageWidth/2-cup.width/2;
+			cup.y = stage.stageHeight/2-cup.height/2;
+			addChild(cup);
 			
 			die1 = new Image(assetManager.getTexture("1"));
 			die1.x = stage.stageWidth/2 - die1.width + 90;
@@ -56,12 +55,6 @@ package View
 			die2.y = stage.stageHeight/2 - die2.height/2 + 150;
 			die2.rotation = 10;
 			addChild(die2);
-			
-			cupTop = new Image(assetManager.getTexture("cup"));
-			cupTop.x = stage.stageWidth/2-cupBottom.width/2;
-			cupTop.y = stage.stageHeight/2-cupBottom.height/2;
-			cupTop.alpha = 0;
-			addChild(cupTop);
 			
 			rollButton = new Button(assetManager.getTexture("button"), "Roll");
 			rollButton.fontSize = 70;
@@ -83,11 +76,22 @@ package View
 			die2.texture = assetManager.getTexture((c.GetDice()[1] as Die).GetValue().toString());
 		}
 		
+		/**
+		 * Updates the game so it looks like there is a top cup.
+		 * To save memmory I change the dice to be invisible instead of covering them.
+		 * Then I change the text on the button so it says Hide if the dice are visible or Show if they are not.
+		 */
 		public function UpdateTopCup(isLifted:Boolean):void{
-			if(isLifted)
-				cupTop.alpha = 1;
-			else
-				cupTop.alpha = 0;
+			if(isLifted){
+				hideButton.text = "Show"; 
+				die1.alpha = 0;
+				die2.alpha = 0;
+			}
+			else{
+				hideButton.text = "Hide";
+				die1.alpha = 1;
+				die2.alpha = 1;
+			}
 		}
 		
 		private function RollButtonTriggered():void{
