@@ -198,13 +198,13 @@
 			
 			<!-- The icon to display for the file type. Optional. -->
 			<icon>
-				<image32x32>Icons/32_app_icon.png</image32x32>
-				<image48x48>Icons/48_app_icon.png</image48x48>
-				<image72x72>Icons/72_app_icon.png</image72x72>
-				<image96x96>Icons/96_app_icon.png</image96x96>
-				<image144x144>Icons/144_app_icon.png</image144x144>
-				<image192x192>Icons/192_app_icon.png</image192x192>
-				<image512x512>Icons/512_app_icon.png</image512x512>
+				<image32x32>Assets/32_app_icon.png</image32x32>
+				<image48x48>Assets/48_app_icon.png</image48x48>
+				<image72x72>Assets/72_app_icon.png</image72x72>
+				<image96x96>Assets/96_app_icon.png</image96x96>
+				<image144x144>Assets/144_app_icon.png</image144x144>
+				<image192x192>Assets/192_app_icon.png</image192x192>
+				<image512x512>Assets/512_app_icon.png</image512x512>
 			</icon> 
 			
 		<!-- </fileType> -->
