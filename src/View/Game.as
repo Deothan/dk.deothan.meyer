@@ -1,7 +1,7 @@
 package View
 {
-	import flash.filesystem.File;
-	
+	import flash.filesystem.File;	
+
 	import Controller.ControllerFacade;
 	
 	import Entities.Cup;
@@ -35,7 +35,7 @@ package View
 			}
 		}
 
-		private function Start():void{		
+		private function Start():void{	
 			table = new Image(assetManager.getTexture("table"));
 			addChild(table);
 			
@@ -70,7 +70,7 @@ package View
 			hideButton.y = stage.stageHeight/2 + 600;
 			addChild(hideButton);
 		}
-		
+
 		public function UpdateDice(c:Cup):void{
 			die1.texture = assetManager.getTexture((c.GetDice()[0] as Die).GetValue().toString())
 			die2.texture = assetManager.getTexture((c.GetDice()[1] as Die).GetValue().toString());

@@ -18,7 +18,7 @@
 	<id>dk.deothan.meyer</id>
 
 	<!-- Used as the filename for the application. Required. -->
-	<filename>Main</filename>
+	<filename>Meyer</filename>
 
 	<!-- The name that is displayed in the AIR application installer. 
 	May have multiple values for each language. See samples or xsd schema file. Optional. -->
@@ -185,7 +185,7 @@
 		<!-- <fileType> -->
 
 			<!-- The name that the system displays for the registered file type. Required. -->
-			<!-- <name></name> -->
+			<!--<name></name>-->
 
 			<!-- The extension to register. Required. -->
 			<!-- <extension></extension> -->
@@ -197,12 +197,15 @@
 			<!-- <contentType></contentType> -->
 			
 			<!-- The icon to display for the file type. Optional. -->
-			<!-- <icon>
-				<image16x16></image16x16>
-				<image32x32></image32x32>
-				<image48x48></image48x48>
-				<image128x128></image128x128>
-			</icon> -->
+			<icon>
+				<image32x32>Icons/32_app_icon.png</image32x32>
+				<image48x48>Icons/48_app_icon.png</image48x48>
+				<image72x72>Icons/72_app_icon.png</image72x72>
+				<image96x96>Icons/96_app_icon.png</image96x96>
+				<image144x144>Icons/144_app_icon.png</image144x144>
+				<image192x192>Icons/192_app_icon.png</image192x192>
+				<image512x512>Icons/512_app_icon.png</image512x512>
+			</icon> 
 			
 		<!-- </fileType> -->
 	<!-- </fileTypes> -->
@@ -277,7 +280,7 @@
 			    <!--Removing the permission android.permission.INTERNET will have the side effect
 					of preventing you from debugging your application on your device-->
 		    	<!--<uses-permission android:name="android.permission.INTERNET"/>-->
-		    		<uses-feature android:name="android.hardware.sensor.accelerometer" />
+	    		<uses-feature android:name="android.hardware.sensor.accelerometer" />
 			    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>-->
 			    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
 			    <!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>-->
