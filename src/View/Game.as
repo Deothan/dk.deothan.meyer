@@ -61,6 +61,7 @@ package View
 			rollButton.addEventListener(Event.TRIGGERED, RollButtonTriggered);
 			rollButton.x = stage.stageWidth/2 - rollButton.width/2 - 200;
 			rollButton.y = stage.stageHeight/2 + 600;
+			rollButton.alpha = 0.5;
 			addChild(rollButton);
 			
 			hideButton = new Button(assetManager.getTexture("button"), "Hide");
@@ -86,11 +87,13 @@ package View
 				hideButton.text = "Show"; 
 				die1.alpha = 0;
 				die2.alpha = 0;
+				rollButton.alpha = 1;
 			}
 			else{
 				hideButton.text = "Hide";
 				die1.alpha = 1;
 				die2.alpha = 1;
+				rollButton.alpha = 0.5;
 			}
 		}
 		
