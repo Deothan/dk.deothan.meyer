@@ -15,6 +15,7 @@ package View
 	
 	public class Game extends Sprite{
 		private var assetManager:AssetManager;
+		private var loadManager:AssetManager;
 		private var cup:Image;
 		private var table:Image;
 		private var die1:Image;
@@ -23,9 +24,14 @@ package View
 		private var hideButton:Button;
 
 		public function Game(){
+			loadManager = new AssetManager();
+			var folder:File = File.applicationDirectory.resolvePath("Assets/load");
+			loadManager.enqueue(folder);
+			loadManager.loadQueue(loadProgress);
+			
 			assetManager = new AssetManager();
-			var folder:File = File.applicationDirectory.resolvePath("Assets");
-			assetManager.enqueue(folder);
+			var folder2:File = File.applicationDirectory.resolvePath("Assets/images");
+			assetManager.enqueue(folder2);
 			assetManager.loadQueue(Progress);
 		}
 
@@ -34,11 +40,19 @@ package View
 				Start();
 			}
 		}
+		
+		private function loadProgress(ratio:Number):void{
+			if(ratio == 1){
+				load();
+			}
+		}
+		
+		private function load():void{
+			table = new Image(loadManager.getTexture("table"));
+			addChild(table);
+		}
 
 		private function Start():void{	
-			table = new Image(assetManager.getTexture("table"));
-			addChild(table);
-			
 			cup = new Image(assetManager.getTexture("cup"));
 			cup.x = stage.stageWidth/2-cup.width/2;
 			cup.y = stage.stageHeight/2-cup.height/2;
